@@ -46,14 +46,15 @@ function fechaIniciar(){
 }
 
 iniciar.addEventListener("click",function(){
+    relogio.classList.remove('pausado')
     inicia()
     fechaIniciar()
 })
 
 pausar.addEventListener("click",function(){
+    relogio.classList.add('pausado')
     clearInterval(timer)
     botoes.appendChild(iniciar)
-
 })
 
 zerar.addEventListener("click",function(){
