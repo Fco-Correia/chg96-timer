@@ -42,3 +42,7 @@ section{
     margin:30px;
     padding:10px 40px;
 }
+
+.pausado {
+    color:red;
+}
