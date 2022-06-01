@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles24(1).css">
+</head>
+<body>
+    <section class="section">
+        <h1>Timer</h1>
+        <p class="relogio">00:00:00</p>
+
+        <p class="botoes">
+            <button class="iniciar">Iniciar</button>
+            <button class="pausar">pausar</button>
+            <button class="zerar">zerar</button>
+        </p>
+    </section>
+
+  <script>
+   const relogio = document.querySelector('.relogio')
+const iniciar = document.querySelector('.iniciar')
+const pausar = document.querySelector('.pausar')
+const zerar = document.querySelector('.zerar')
+const botoes = document.querySelector('.botoes')
+
+function criaHoraDosSegundos(segundos) {
+    const data = new Date(segundos * 1000)
+    return data.toLocaleTimeString('pt-BR', {//função para hora
+        timeZone:'GMT'
+    })
+}
+let segundos = 0
+let timer;
+function inicia() {
+    timer= setInterval(function() {
+        relogio.innerHTML=criaHoraDosSegundos(segundos)
+        segundos++
+    },1000)
+}
+
+function fechaIniciar(){
+    iniciar.remove()
+}
+
+iniciar.addEventListener("click",function(){
+    inicia()
+    fechaIniciar()
+})
+
+pausar.addEventListener("click",function(){
+    clearInterval(timer)
+    botoes.appendChild(iniciar)
+
+})
+
+zerar.addEventListener("click",function(){
+    clearInterval(timer)
+    relogio.innerHTML = '00:00:00';
+    segundos =0;
+    botoes.appendChild(iniciar)
+})
+  </script>
+</body>
+</html>
