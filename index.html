@@ -58,6 +58,7 @@ pausar.addEventListener("click",function(){
 })
 
 zerar.addEventListener("click",function(){
+    relogio.classList.add('zerado')
     clearInterval(timer)
     relogio.innerHTML = '00:00:00';
     segundos =0;
