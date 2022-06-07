@@ -36,8 +36,8 @@ let segundos = 0
 let timer;
 function inicia() {
     timer= setInterval(function() {
+        ++segundos
         relogio.innerHTML=criaHoraDosSegundos(segundos)
-        segundos++
     },1000)
 }
 
