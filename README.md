@@ -1,2 +1,2 @@
 # timer
-https://chg96-cpu.github.io/chg96-timer/
+https://Fco-Correia.github.io/chg96-timer/
